@@ -1,0 +1,81 @@
+{
+    "tests": [
+        {
+            "name": "Check OS File",
+            "run": "grep 'Ubuntu' _output/os.txt",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check CPU File",
+            "run": "grep 'CPU' _output/cpu.txt",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check Memory File",
+            "run": "grep 'MemTotal' _output/mem.txt",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check pip3 Installation",
+            "run": "grep 'pip' _output/pip3.txt",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check Jupyter Installation",
+            "run": "grep 'jupyter' _output/jupyter.txt",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check Bash Script Exists",
+            "run": "[ -f _output/count_python.sh ] && echo 'Exists' || exit 1",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 5
+        },
+        {
+            "name": "Check Bash Script Shebang",
+            "run": "head -n 1 _output/count_python.sh | grep '#!/bin/bash'",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 3
+        },
+        {
+            "name": "Check Bash Script Executable",
+            "run": "[ -x _output/count_python.sh ] && echo 'Executable' || exit 1",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 3
+        },
+        {
+            "name": "Test Bash Script Execution",
+            "run": "bash _output/count_python.sh",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 15
+        },
+        {
+            "name": "Test Python Script Execution",
+            "run": "python3 _output/count_github.py",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 15
+        },
+        {
+            "name": "Check Commit Count",
+            "run": "[ $(git rev-list --count HEAD) -ge 5 ] && echo 'Enough commits' || exit 1",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 4
+        }
+    ]
+}
