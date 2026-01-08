@@ -1,5 +1,5 @@
 ---
-title: In Class Lab 01
+title: "Module 1 Assignment: Version Control and Cloud Computing"
 author:
   - name: Norah Jones
     affiliations:
@@ -21,3 +21,4 @@ execute:
   eval: false
   freeze: auto
 ---
+
