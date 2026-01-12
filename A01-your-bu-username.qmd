@@ -17,8 +17,8 @@ format:
 date-modified: today
 date-format: long
 execute:
-  echo: false
-  eval: false
+  echo: true
+  eval: true
   freeze: auto
 ---
 
