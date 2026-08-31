@@ -28,4 +28,19 @@ execute:
 > [!IMPORTANT]
 > **Action Required:** Please rename the `.env.example` file to `.env` in this folder and add your Employability key to it.
 
+```{python}
+# | eval: true
+# | echo: true
+import platform
+import psutil
+
+print("Operating System:", platform.system(), platform.release())
+print("Python Version:", platform.python_version())
+print("Machine:", platform.machine())
+print("Processor:", platform.processor())
+
+mem = psutil.virtual_memory()
+print("Total Memory (MB):", round(mem.total / (1024**2), 2))
+print("Available Memory (MB):", round(mem.available / (1024**2), 2))
+```
 
